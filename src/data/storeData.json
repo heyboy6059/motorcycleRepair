@@ -1,0 +1,136 @@
+{
+  "data": [
+    {
+      "id": 0,
+      "name": "",
+      "address": "",
+      "phone": "",
+      "website": "",
+      "email": "",
+      "formattedAddress": "",
+      "lat": -23.5404544,
+      "lng": 148.172846
+    },
+    {
+      "id": 1,
+      "name": "",
+      "address": "",
+      "phone": "",
+      "website": "",
+      "email": "",
+      "formattedAddress": "",
+      "lat": -27.4739663,
+      "lng": 153.0017601
+    },
+    {
+      "id": 2,
+      "name": "",
+      "address": "",
+      "phone": "",
+      "website": "",
+      "email": "",
+      "formattedAddress": "",
+      "lat": -27.4922557,
+      "lng": 153.045792
+    },
+    {
+      "id": 3,
+      "name": "",
+      "address": "",
+      "phone": "",
+      "website": "",
+      "email": "",
+      "formattedAddress": "",
+      "lat": -27.5314234,
+      "lng": 153.200495
+    },
+    {
+      "id": 4,
+      "name": "",
+      "address": "",
+      "phone": "",
+      "website": "",
+      "email": "",
+      "formattedAddress": "",
+      "lat": -23.5272402,
+      "lng": 148.1622424
+    },
+    {
+      "id": 5,
+      "name": "",
+      "address": "",
+      "phone": "",
+      "website": "",
+      "email": "",
+      "formattedAddress": "",
+      "lat": -27.43646,
+      "lng": 153.031569
+    },
+    {
+      "id": 6,
+      "name": "",
+      "address": "",
+      "phone": "",
+      "website": "",
+      "email": "",
+      "formattedAddress": "",
+      "lat": -27.6229256,
+      "lng": 153.1210964
+    },
+    {
+      "id": 7,
+      "name": "",
+      "address": "",
+      "phone": "",
+      "website": "",
+      "email": "",
+      "formattedAddress": "",
+      "lat": -27.6152248,
+      "lng": 152.7645422
+    },
+    {
+      "id": 8,
+      "name": "",
+      "address": "",
+      "phone": "",
+      "website": "",
+      "email": "",
+      "formattedAddress": "",
+      "lat": -27.0799052,
+      "lng": 152.9512726
+    },
+    {
+      "id": 9,
+      "name": "",
+      "address": "",
+      "phone": "",
+      "website": "",
+      "email": "",
+      "formattedAddress": "",
+      "lat": -27.9355148,
+      "lng": 153.3934858
+    },
+    {
+      "id": 10,
+      "name": "",
+      "address": "",
+      "phone": "",
+      "website": "",
+      "email": "",
+      "formattedAddress": "",
+      "lat": -26.6893507,
+      "lng": 153.1154426
+    },
+    {
+      "id": 11,
+      "name": "",
+      "address": "",
+      "phone": "",
+      "website": "",
+      "email": "",
+      "formattedAddress": "",
+      "lat": -27.4418968,
+      "lng": 153.0411834
+    }
+  ]
+}

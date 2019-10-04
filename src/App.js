@@ -1,26 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
+import './index.css';
+import { Layout, Header, Navigation, Drawer, Content} from 'react-mdl';
+import Main from './components/main';
+import { Switch, Route } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-function App() {
+class App extends Component {
+  render() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="demo-big-content">
+        <Layout>
+            <Header title="Smart Bikers" scroll>
+                <Navigation>
+                    <Link to="/signin">Sign in</Link>
+                    <Link to="/locator">Locator</Link>
+                </Navigation>
+            </Header>
+            <Drawer title="Menu">
+                <Navigation>
+                    <a href="#">Profile</a>
+                    <a href="#">Status</a>
+
+                </Navigation>
+            </Drawer>
+            <Content>
+                <div className="page-content" />
+                <Main/>
+
+            </Content>
+        </Layout>
     </div>
   );
 }
-
+}
 export default App;
