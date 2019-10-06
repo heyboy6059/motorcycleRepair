@@ -69,6 +69,12 @@ export default class userServiceRequest extends React.Component {
     });
   };
 
+  serviceDayChange = event => {
+    this.setState({
+      serviceDay: event.target.value
+    });
+  };
+
   render() {
     return (
       <div className="container">
@@ -137,15 +143,44 @@ export default class userServiceRequest extends React.Component {
               Service Type
             </label>
             <select
-              className="custom-select col-sm-4"
+              className="custom-select col-sm-3"
               id="inputServiceType"
               onChange={this.serviceTypeChange}
+              style={{ marginLeft: '1em' }}
             >
               <option value="0">Choose...</option>
               <option value="Full">Full</option>
               <option value="Minor">Minor</option>
               <option value="Oil Check">Oil Check</option>
               <option value="Other">Other (add notes)</option>
+            </select>
+          </div>
+
+          <div className="form-group row">
+            <label
+              className="col-sm-2 col-form-label"
+              htmlFor="inputServiceDay"
+            >
+              Service Day
+            </label>
+            <select
+              className="custom-select col-sm-3"
+              id="inputServiceDay"
+              onChange={this.serviceDayChange}
+              style={{ marginLeft: '1em' }}
+            >
+              <option value="0">Choose...</option>
+              <option value="Monday">Monday</option>
+              <option value="Tuesday">Tuesday</option>
+              <option value="Wednesday">Wednesday</option>
+              <option value="Friday">Friday</option>
+              <option value="Saturday">Saturday</option>
+              <option value="Sunday">Sunday</option>
+              <option value="Weekdays">Weekdays</option>
+              <option value="Weekends">Weekends</option>
+              <option value="Mon-Thurs">Mon-Thurs</option>
+              <option value="Mon-Sat">Mon-Sat</option>
+              <option value="Wed-Sun">Wed-Sun</option>
             </select>
           </div>
 
