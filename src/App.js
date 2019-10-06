@@ -5,6 +5,7 @@ import { Layout, Header, Navigation, Drawer, Content } from 'react-mdl';
 import Main from './components/main';
 import { Switch, Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import LogoB from './img/logoB.png';
 
 import UserServiceRequest from './components/userServiceRequest';
 
@@ -13,7 +14,7 @@ class App extends Component {
     return (
       <div className="demo-big-content">
         <Layout>
-          <Header className="header-color" title="Smart Bikers" scroll>
+          <Header className="header-color" scroll><img src={LogoB} alt='LogoB'/>
             <Navigation>
               <Link to="/motorcycle">Motorcycle Information</Link>
               <Link to="/match">Matching Page</Link>

@@ -5,9 +5,7 @@ class Mechanic extends Component {
     return(
       <div>
         <h1>Mechanic Registration</h1>
-        
       </div>
-
     )
   }
 }
