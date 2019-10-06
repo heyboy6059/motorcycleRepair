@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 
 export default class userServiceRequest extends React.Component {
   state = {
@@ -11,6 +12,29 @@ export default class userServiceRequest extends React.Component {
     serviceTimeFrom: '',
     serviceTimeTo: '',
     notes: ''
+  };
+
+  handleSubmit = event => {
+    event.preventDefault();
+
+    const user = {
+      address: this.state.address,
+      make: this.state.make,
+      model: this.statemodel,
+      year: this.state.year,
+      serviceType: this.state.serviceType,
+      serviceDay: this.state.serviceDay,
+      serviceTimeFrom: this.state.serviceTimeFrom,
+      serviceTimeTo: this.state.serviceTimeTo,
+      notes: this.state.notes
+    };
+
+    axios
+      .post(`https://jsonplaceholder.typicode.com/users`, { user })
+      .then(res => {
+        console.log(res);
+        console.log(res.data);
+      });
   };
 
   render() {

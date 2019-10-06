@@ -22,6 +22,7 @@ class App extends Component {
           <Content>
             <div className="page-content" />
             <Main />
+            <UserServiceRequest />
           </Content>
         </Layout>
       </div>
