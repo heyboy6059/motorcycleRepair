@@ -17,7 +17,7 @@ export default class userServiceRequest extends React.Component {
   handleSubmit = event => {
     event.preventDefault();
 
-    const user = {
+    const userServiceRequestData = {
       address: this.state.address,
       make: this.state.make,
       model: this.statemodel,
@@ -30,7 +30,7 @@ export default class userServiceRequest extends React.Component {
     };
 
     axios
-      .post(`https://jsonplaceholder.typicode.com/users`, { user })
+      .post(`https://jsonplaceholder.typicode.com/`, { userServiceRequestData })
       .then(res => {
         console.log(res);
         console.log(res.data);
@@ -41,70 +41,81 @@ export default class userServiceRequest extends React.Component {
     return (
       <div className="container">
         <form>
-          <div class="form-group row">
-            <label for="inputAddress" class="col-sm-2 col-form-label">
+          <div className="form-group row">
+            <label htmlFor="inputAddress" className="col-sm-2 col-form-label">
               Address
             </label>
-            <div class="col-sm-4">
+            <div className="col-sm-4">
               <input
                 type="text"
-                class="form-control"
+                className="form-control"
                 id="inputAddress"
                 placeholder="e.g. 1 main st, St Lucia QLD 4067"
               />
             </div>
           </div>
-          <div class="form-group row">
-            <label for="inputMake" class="col-sm-2 col-form-label">
+          <div className="form-group row">
+            <label htmlFor="inputMake" className="col-sm-2 col-form-label">
               Make
             </label>
-            <div class="col-sm-4">
+            <div className="col-sm-4">
               <input
                 type="text"
-                class="form-control"
+                className="form-control"
                 id="inputMake"
                 placeholder="e.g. Honda"
               />
             </div>
           </div>
-          <div class="form-group row">
-            <label for="inputModel" class="col-sm-2 col-form-label">
+          <div className="form-group row">
+            <label htmlFor="inputModel" className="col-sm-2 col-form-label">
               Model
             </label>
-            <div class="col-sm-4">
+            <div className="col-sm-4">
               <input
                 type="text"
-                class="form-control"
+                className="form-control"
                 id="inputModel"
                 placeholder="e.g. CB300R"
               />
             </div>
           </div>
-          <div class="form-group row">
-            <label for="inputYear" class="col-sm-2 col-form-label">
+          <div className="form-group row">
+            <label htmlFor="inputYear" className="col-sm-2 col-form-label">
               Year
             </label>
-            <div class="col-sm-4">
+            <div className="col-sm-4">
               <input
                 type="text"
-                class="form-control"
+                className="form-control"
                 id="inputYear"
                 placeholder="e.g. 2018"
               />
             </div>
           </div>
           <div className="form-group row">
-            <label class="col-sm-2 col-form-label" for="inputServiceType">
+            <label
+              className="col-sm-2 col-form-label"
+              htmlFor="inputServiceType"
+            >
               Service Type
             </label>
-            <select class="custom-select col-sm-4" id="inputServiceType">
-              <option selected>Choose...</option>
+            <select className="custom-select col-sm-4" id="inputServiceType">
+              <option value="0">Choose...</option>
               <option value="1">Full</option>
               <option value="2">Minor</option>
               <option value="3">Oil Check</option>
               <option value="3">Other (add notes)</option>
             </select>
           </div>
+
+          <button
+            type="submit"
+            class="btn btn-primary my-1"
+            onClick={this.handleSubmit}
+          >
+            Submit
+          </button>
         </form>
       </div>
     );
