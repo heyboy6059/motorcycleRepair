@@ -75,6 +75,24 @@ export default class userServiceRequest extends React.Component {
     });
   };
 
+  serviceTimeFromChange = event => {
+    this.setState({
+      serviceTimeFrom: event.target.value
+    });
+  };
+
+  serviceTimeToChange = event => {
+    this.setState({
+      serviceTimeTo: event.target.value
+    });
+  };
+
+  notesChange = event => {
+    this.setState({
+      notes: event.target.value
+    });
+  };
+
   render() {
     return (
       <div className="container">
@@ -184,13 +202,56 @@ export default class userServiceRequest extends React.Component {
             </select>
           </div>
 
-          <button
-            type="submit"
-            className="btn btn-primary my-1"
-            onClick={this.handleSubmit}
-          >
-            Submit
-          </button>
+          <div className="form-group row">
+            <label
+              className="col-sm-2 col-form-label"
+              htmlFor="inputServiceTimeFrom"
+            >
+              Service Time
+            </label>
+            <div className="col-sm-2">
+              <input
+                type="text"
+                className="form-control"
+                id="inputServiceTimeFrom"
+                placeholder="From"
+                onChange={this.serviceTimeFromChange}
+              />
+            </div>
+            <div className="col-sm-2">
+              <input
+                type="text"
+                className="form-control"
+                id="inputServiceTimeTo"
+                placeholder="To"
+                onChange={this.serviceTimeToChange}
+              />
+            </div>
+          </div>
+
+          <div className="form-group row">
+            <label htmlFor="inputNotes" className="col-sm-2 col-form-label">
+              Notes
+            </label>
+            <div className="col-sm-4">
+              <textarea
+                className="form-control"
+                id="inputNotes"
+                placeholder=""
+                onChange={this.notesChange}
+              ></textarea>
+            </div>
+          </div>
+
+          <div className="form-group row">
+            <button
+              type="submit"
+              className="btn btn-primary btn-lg my-1"
+              onClick={this.handleSubmit}
+            >
+              Submit
+            </button>
+          </div>
         </form>
       </div>
     );
