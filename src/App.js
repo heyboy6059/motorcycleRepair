@@ -13,17 +13,10 @@ class App extends Component {
         <Layout>
             <Header className='header-color' title="Smart Bikers" scroll>
                 <Navigation>
-                    <Link to="/signin">Sign in</Link>
-                    <Link to="/locator">Locator</Link>
+                    <Link to="/match">Matching Page</Link>
+                    <Link to="/mechanic">Mechanic Registration</Link>
                 </Navigation>
             </Header>
-            <Drawer title="Menu">
-                <Navigation>
-                    <a href="#">Profile</a>
-                    <a href="#">Status</a>
-
-                </Navigation>
-            </Drawer>
             <Content>
                 <div className="page-content" />
                 <Main/>

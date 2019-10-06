@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 
-class Signin extends Component {
+class Mechanic extends Component {
   render() {
     return(
       <div>
-        <h1>Sign in Page</h1>
+        <h1>Mechanic Registration</h1>
         <div className="input-container">
             <label htmlFor="username">Username</label>
             <input type="text" placeholder="Enter Username" name="username" required>
@@ -28,4 +28,4 @@ class Signin extends Component {
   }
 }
 
-export default Signin;
+export default Mechanic;
