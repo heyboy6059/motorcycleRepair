@@ -30,11 +30,43 @@ export default class userServiceRequest extends React.Component {
     };
 
     axios
-      .post(`https://jsonplaceholder.typicode.com/`, { userServiceRequestData })
+      .post(`https://jsonplaceholder.typicode.com/posts`, {
+        userServiceRequestData
+      })
       .then(res => {
         console.log(res);
         console.log(res.data);
       });
+  };
+
+  addressChange = event => {
+    this.setState({
+      address: event.target.value
+    });
+  };
+
+  makeChange = event => {
+    this.setState({
+      make: event.target.value
+    });
+  };
+
+  modelChange = event => {
+    this.setState({
+      model: event.target.value
+    });
+  };
+
+  yearChange = event => {
+    this.setState({
+      year: event.target.value
+    });
+  };
+
+  serviceTypeChange = event => {
+    this.setState({
+      serviceType: event.target.value
+    });
   };
 
   render() {
@@ -51,6 +83,7 @@ export default class userServiceRequest extends React.Component {
                 className="form-control"
                 id="inputAddress"
                 placeholder="e.g. 1 main st, St Lucia QLD 4067"
+                onChange={this.addressChange}
               />
             </div>
           </div>
@@ -64,6 +97,7 @@ export default class userServiceRequest extends React.Component {
                 className="form-control"
                 id="inputMake"
                 placeholder="e.g. Honda"
+                onChange={this.makeChange}
               />
             </div>
           </div>
@@ -77,6 +111,7 @@ export default class userServiceRequest extends React.Component {
                 className="form-control"
                 id="inputModel"
                 placeholder="e.g. CB300R"
+                onChange={this.modelChange}
               />
             </div>
           </div>
@@ -90,6 +125,7 @@ export default class userServiceRequest extends React.Component {
                 className="form-control"
                 id="inputYear"
                 placeholder="e.g. 2018"
+                onChange={this.yearChange}
               />
             </div>
           </div>
@@ -100,18 +136,22 @@ export default class userServiceRequest extends React.Component {
             >
               Service Type
             </label>
-            <select className="custom-select col-sm-4" id="inputServiceType">
+            <select
+              className="custom-select col-sm-4"
+              id="inputServiceType"
+              onChange={this.serviceTypeChange}
+            >
               <option value="0">Choose...</option>
-              <option value="1">Full</option>
-              <option value="2">Minor</option>
-              <option value="3">Oil Check</option>
-              <option value="3">Other (add notes)</option>
+              <option value="Full">Full</option>
+              <option value="Minor">Minor</option>
+              <option value="Oil Check">Oil Check</option>
+              <option value="Other">Other (add notes)</option>
             </select>
           </div>
 
           <button
             type="submit"
-            class="btn btn-primary my-1"
+            className="btn btn-primary my-1"
             onClick={this.handleSubmit}
           >
             Submit
