@@ -1,14 +1,14 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import Signin from './signin';
-import Locator from './locator';
+import Match from './match';
+import Mechanic from './mechanic';
 import Homepage from './homepage';
 
 const Main = () => (
   <Switch>
     <Route exact path="/" component={Homepage} />
-    <Route path="/signin" component={Signin} />
-    <Route path="/locator" component={Locator} />
+    <Route path="/match" component={Match} />
+    <Route path="/mechanic" component={Mechanic} />
   </Switch>
 )
 
