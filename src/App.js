@@ -15,6 +15,7 @@ class App extends Component {
         <Layout>
           <Header className="header-color" title="Smart Bikers" scroll>
             <Navigation>
+              <Link to="/motorcycle">Motorcycle Information</Link>
               <Link to="/match">Matching Page</Link>
               <Link to="/mechanic">Mechanic Registration</Link>
             </Navigation>
