@@ -14,7 +14,7 @@ Header {
 .header-color {
   background: #12c2e9;
   background: -webkit-linear-gradient(to right, #f64f59, #c471ed, #12c2e9);
-  background: linear-gradient(to right, #f64f59, #c471ed, #12c2e9); 
+  background: linear-gradient(to right, #f64f59, #c471ed, #12c2e9);
 }
 
 p {
@@ -35,4 +35,10 @@ p {
 
 .App-link {
   color: #09d3ac;
+}
+
+.center-container {
+
+  margin: 100px;
+
 }
