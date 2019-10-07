@@ -7,14 +7,13 @@ import { Switch, Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import LogoB from './img/logoB.png';
 
-import UserServiceRequest from './components/userServiceRequest';
-
 class App extends Component {
   render() {
     return (
       <div className="demo-big-content">
         <Layout>
-          <Header className="header-color" scroll><img src={LogoB} alt='LogoB'/>
+          <Header className="header-color" scroll>
+            <img src={LogoB} alt="LogoB" />
             <Navigation>
               <Link to="/motorcycle">Motorcycle Information</Link>
               <Link to="/match">Matching Page</Link>
@@ -24,7 +23,6 @@ class App extends Component {
           <Content>
             <div className="page-content" />
             <Main />
-            <UserServiceRequest />
           </Content>
         </Layout>
       </div>
