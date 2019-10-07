@@ -121,7 +121,7 @@ class MechanicRegistration extends Component {
             <div className="col-sm-4">
               <input
                 type="text"
-                className="form-control"
+                className="form-control" 
                 id="inputMechanic"
                 placeholder="e.g. John Doe"
                 onChange={this.mechanicChange}
