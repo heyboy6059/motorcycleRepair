@@ -6,6 +6,7 @@ import Main from './components/main';
 import { Switch, Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import LogoB from './img/logoB.png';
+import Homepage from './components/homepage'
 
 class App extends Component {
   render() {
@@ -13,7 +14,9 @@ class App extends Component {
       <div className="demo-big-content">
         <Layout>
           <Header className="header-color" scroll>
-            <img src={LogoB} alt="LogoB" />
+            <Link to="/">
+              <img src={LogoB} alt="LogoB" />
+            </Link>
             <Navigation>
               <Link to="/mechanic">Mechanic Registration</Link>
             </Navigation>
