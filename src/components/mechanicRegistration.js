@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 class MechanicRegistration extends Component {
   state = {
@@ -37,6 +38,7 @@ class MechanicRegistration extends Component {
         console.log(res);
         console.log(res.data);
       });
+    this.props.history.push('/alert');
   };
 
   companyChange = event => {
@@ -247,13 +249,16 @@ class MechanicRegistration extends Component {
           </div> */}
 
           <div className="form-group row">
-            <button
-              type="submit"
-              className="btn btn-primary btn-lg my-1"
-              onClick={this.handleSubmit}
-            >
-              Register
-            </button>
+            <Link to="/alert">
+              <button
+                type="submit"
+                className="btn btn-primary btn-lg my-1"
+                to="/alert"
+                onClick={this.handleSubmit}
+              >
+                Register
+              </button>
+            </Link>
           </div>
         </form>
       </div>

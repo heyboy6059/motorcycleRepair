@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import * as mechanics from '../data/storeData';
 import MechInfoList from './mechInfoList';
-import MatchForm from './matchForm';
+
 
 class Matching extends Component {
   id = 3
@@ -10,20 +10,38 @@ class Matching extends Component {
       {
         id: 0,
         mechName: 'Gerrad',
+        company: 'Suzuki',
         phoneNumber: '0329-392-192',
-        email: 'fdlkk112@hotmail.com'
+        email: 'fdlkk112@hotmail.com',
+        availableDays: 'Mon,Tues,Wed',
+        wkHrStart: '07:00',
+        wkHrEnd: '17:00',
+        rating: '60',
+        dist: '5'
       },
       {
         id: 1,
         mechName: 'Lampard',
+        company: 'Holden',
         phoneNumber: '0321-323-454',
-        email: 'jf109322@gmail.com'
+        email: 'jf109322@gmail.com',
+        availableDays: 'Weekdays',
+        wkHrStart: '10:00',
+        wkHrEnd: '16:00',
+        rating: '80',
+        dist: '1'
       },
       {
         id: 2,
         mechName: 'Scholes',
+        company: 'BMW',
         phoneNumber: '0221-323-454',
-        email: '39999dllsl@gmail.com'
+        email: '39999dllsl@gmail.com',
+        availableDays: 'Weekend',
+        wkHrStart: '09:00',
+        wkHrEnd: '20:00',
+        rating: '20',
+        dist: '10'
       }
     ]
   }
@@ -37,10 +55,7 @@ class Matching extends Component {
   render() {
     return (
       <div className = "container">
-        <h2>Matching Page</h2>
-        <MatchForm
-          onCreate={this.handleCreate}
-        />
+        <h2>Matchings Page</h2>
         <MechInfoList data={this.state.information}/>
       </div>
     );
