@@ -1,6 +1,90 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 class MechanicRegistration extends Component {
+  state = {
+    companyName: '',
+    mechanicName: '',
+    licenceNumber: '',
+    address: '',
+    phoneNumber: '',
+    serviceDay: '',
+    serviceTimeTo: '',
+    serviceTimeFrom: ''
+  };
+
+  handleSubmit = event => {
+    event.preventDefault();
+
+    const mechanicRegistrationData = {
+      companyName: this.state.companyName,
+      mechanicName: this.state.mechanicName,
+      licenceNumber: this.state.licenceNumber,
+      address: this.state.address,
+      phoneNumber: this.state.phoneNumber,
+      serviceDay: this.state.serviceDay,
+      serviceTimeTo: this.state.serviceTimeTo,
+      serviceTimeFrom: this.state.serviceTimeFrom
+    };
+
+    axios
+      .post(`https://jsonplaceholder.typicode.com/posts`, {
+        mechanicRegistrationData
+      })
+      .then(res => {
+        console.log(res);
+        console.log(res.data);
+      });
+  };
+
+  companyChange = event => {
+    this.setState({
+      companyName: event.target.value
+    });
+  };
+
+  mechanicChange = event => {
+    this.setState({
+      mechanicName: event.target.value
+    });
+  };
+
+  licenceChange = event => {
+    this.setState({
+      licenceNumber: event.target.value
+    });
+  };
+
+  addressChange = event => {
+    this.setState({
+      address: event.target.value
+    });
+  };
+
+  phoneChange = event => {
+    this.setState({
+      phoneNumber: event.target.value
+    });
+  };
+
+  serviceDayChange = event => {
+    this.setState({
+      serviceDay: event.target.value
+    });
+  };
+
+  serviceTimeFromChange = event => {
+    this.setState({
+      serviceTimeFrom: event.target.value
+    });
+  };
+
+  serviceTimeToChange = event => {
+    this.setState({
+      serviceTimeTo: event.target.value
+    });
+  };
+
   render() {
     return (
       <div className="container">
@@ -42,9 +126,9 @@ class MechanicRegistration extends Component {
               <input
                 type="text"
                 className="form-control"
-                id="inputMechanic"
+                id="inputLicence"
                 placeholder="e.g. ABCD12345"
-                onChange={this.mechanicChange}
+                onChange={this.licenceChange}
               />
             </div>
           </div>
@@ -126,7 +210,7 @@ class MechanicRegistration extends Component {
             </div>
           </div>
 
-          <div className="form-group row">
+          {/* <div className="form-group row">
             <label htmlFor="inputNotes" className="col-sm-2 col-form-label">
               Notes
             </label>
@@ -138,7 +222,7 @@ class MechanicRegistration extends Component {
                 onChange={this.notesChange}
               ></textarea>
             </div>
-          </div>
+          </div> */}
 
           <div className="form-group row">
             <button
