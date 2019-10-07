@@ -10,7 +10,8 @@ class MechanicRegistration extends Component {
     phoneNumber: '',
     serviceDay: '',
     serviceTimeTo: '',
-    serviceTimeFrom: ''
+    serviceTimeFrom: '',
+    email: ''
   };
 
   handleSubmit = event => {
@@ -24,7 +25,8 @@ class MechanicRegistration extends Component {
       phoneNumber: this.state.phoneNumber,
       serviceDay: this.state.serviceDay,
       serviceTimeTo: this.state.serviceTimeTo,
-      serviceTimeFrom: this.state.serviceTimeFrom
+      serviceTimeFrom: this.state.serviceTimeFrom,
+      email: this.state.email
     };
 
     axios
@@ -82,6 +84,12 @@ class MechanicRegistration extends Component {
   serviceTimeToChange = event => {
     this.setState({
       serviceTimeTo: event.target.value
+    });
+  };
+
+  emailChange = event => {
+    this.setState({
+      email: event.target.value
     });
   };
 
@@ -157,6 +165,20 @@ class MechanicRegistration extends Component {
                 id="inputPhone"
                 placeholder="e.g. 0400 123 456"
                 onChange={this.phoneChange}
+              />
+            </div>
+          </div>
+          <div className="form-group row">
+            <label htmlFor="inputEmail" className="col-sm-2 col-form-label">
+              Email
+            </label>
+            <div className="col-sm-4">
+              <input
+                type="text"
+                className="form-control"
+                id="inputEmail"
+                placeholder="e.g. jonedoe@gmail.com"
+                onChange={this.emailChange}
               />
             </div>
           </div>
