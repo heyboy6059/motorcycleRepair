@@ -1,7 +1,8 @@
 import React from 'react';
 import axios from 'axios';
+import { withRouter } from 'react-router-dom';
 
-export default class userServiceRequest extends React.Component {
+class userServiceRequest extends React.Component {
   state = {
     address: '',
     make: '',
@@ -37,6 +38,8 @@ export default class userServiceRequest extends React.Component {
         console.log(res);
         console.log(res.data);
       });
+
+    this.props.history.push('/matching');
   };
 
   addressChange = event => {
@@ -96,6 +99,7 @@ export default class userServiceRequest extends React.Component {
   render() {
     return (
       <div className="container">
+        <h2>Service Request</h2>
         <form>
           <div className="form-group row">
             <label htmlFor="inputAddress" className="col-sm-2 col-form-label">
@@ -249,7 +253,7 @@ export default class userServiceRequest extends React.Component {
               className="btn btn-primary btn-lg my-1"
               onClick={this.handleSubmit}
             >
-              Submit
+              Request
             </button>
           </div>
         </form>
@@ -257,3 +261,5 @@ export default class userServiceRequest extends React.Component {
     );
   }
 }
+
+export default withRouter(userServiceRequest);
