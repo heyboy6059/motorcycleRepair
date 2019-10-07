@@ -7,8 +7,9 @@ class MechInfo extends Component {
       phoneNumber: '',
       email: '',
       company:'',
-      wkHrStart:'',
-      wkHrEnd:'',
+      serviceDay:'',
+      serviceTimeFrom:'',
+      serviceTimeTo:'',
       rating:'',
       dist:'',
       id: 0
@@ -24,7 +25,7 @@ class MechInfo extends Component {
     };
 
     const {
-      mechName, phoneNumber, email, company, wkHrStart, wkHrEnd, rating, dist, id
+      mechName, phoneNumber, email, company, serviceDay, serviceTimeFrom, serviceTimeTo, rating, dist, id
     } = this.props.info;
 
     return (
@@ -32,7 +33,7 @@ class MechInfo extends Component {
         <div><b>{mechName}</b> ({company})</div>
         <div>{phoneNumber}</div>
         <div>{email}</div>
-        <div>{wkHrStart} AM ~ {wkHrEnd}</div>
+        <div>{serviceDay} / {serviceTimeFrom} AM ~ {serviceTimeTo}</div>
         <div>{rating}% satisfaction</div>
         <div>{dist}KM away from your location</div>
       </div>

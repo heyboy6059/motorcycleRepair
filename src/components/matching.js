@@ -13,9 +13,9 @@ class Matching extends Component {
         company: 'Suzuki',
         phoneNumber: '0329-392-192',
         email: 'fdlkk112@hotmail.com',
-        availableDays: 'Mon,Tues,Wed',
-        wkHrStart: '07:00',
-        wkHrEnd: '17:00',
+        serviceDay: 'Mon,Tues,Wed',
+        serviceTimeFrom: '07:00',
+        serviceTimeTo: '17:00',
         rating: '60',
         dist: '5'
       },
@@ -25,9 +25,9 @@ class Matching extends Component {
         company: 'Holden',
         phoneNumber: '0321-323-454',
         email: 'jf109322@gmail.com',
-        availableDays: 'Weekdays',
-        wkHrStart: '10:00',
-        wkHrEnd: '16:00',
+        serviceDay: 'Weekdays',
+        serviceTimeFrom: '10:00',
+        serviceTimeTo: '16:00',
         rating: '80',
         dist: '1'
       },
@@ -37,9 +37,9 @@ class Matching extends Component {
         company: 'BMW',
         phoneNumber: '0221-323-454',
         email: '39999dllsl@gmail.com',
-        availableDays: 'Weekend',
-        wkHrStart: '09:00',
-        wkHrEnd: '20:00',
+        serviceDay: 'Weekend',
+        serviceTimeFrom: '09:00',
+        serviceTimeTo: '20:00',
         rating: '20',
         dist: '10'
       }
