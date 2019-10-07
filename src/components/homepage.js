@@ -4,7 +4,7 @@ import UserServiceRequest from './userServiceRequest';
 class Homepage extends Component {
   render() {
     return (
-      <div className = 'center-container'>
+      <div>
         <UserServiceRequest />
       </div>
     );

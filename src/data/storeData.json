@@ -2,14 +2,15 @@
   "data": [
     {
       "id": 0,
-      "name": "",
-      "address": "",
-      "phone": "",
-      "website": "",
-      "email": "",
-      "formattedAddress": "",
-      "lat": -23.5404544,
-      "lng": 148.172846
+      "company": "Nuclear",
+      "mechName": "Jason Deurlo",
+      "phone": "042 - 390 - 2341",
+      "email": "0ksjdal@hotmail.com",
+      "availableDays": "Weekdays",
+      "workStart": "07:30:00",
+      "workEnd": "17:00:00",
+      "rating": 3,
+      "Dist": 6671.803901159991
     },
     {
       "id": 1,
