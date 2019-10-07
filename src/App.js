@@ -15,8 +15,6 @@ class App extends Component {
           <Header className="header-color" scroll>
             <img src={LogoB} alt="LogoB" />
             <Navigation>
-              <Link to="/motorcycle">Motorcycle Information</Link>
-              <Link to="/match">Matching Page</Link>
               <Link to="/mechanic">Mechanic Registration</Link>
             </Navigation>
           </Header>
