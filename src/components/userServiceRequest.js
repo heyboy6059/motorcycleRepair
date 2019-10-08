@@ -7,11 +7,11 @@ class userServiceRequest extends React.Component {
     address: '',
     make: '',
     model: '',
-    year: '',
+    yr: '',
     serviceType: '',
     serviceDay: '',
-    serviceTimeFrom: '',
-    serviceTimeTo: '',
+    serviceFrom: '',
+    serviceTo: '',
     notes: ''
   };
 
@@ -22,18 +22,26 @@ class userServiceRequest extends React.Component {
       address: this.state.address,
       make: this.state.make,
       model: this.statemodel,
-      year: this.state.year,
+      yr: this.state.yr,
       serviceType: this.state.serviceType,
       serviceDay: this.state.serviceDay,
-      serviceTimeFrom: this.state.serviceTimeFrom,
-      serviceTimeTo: this.state.serviceTimeTo,
+      serviceFrom: this.state.serviceFrom,
+      serviceTo: this.state.serviceTo,
       notes: this.state.notes
     };
 
+    let axiosConfig = {
+      headers: {
+        'Access-Control-Allow-Origin': '*'
+      }
+    };
+
     axios
-      .post(`https://jsonplaceholder.typicode.com/posts`, {
-        userServiceRequestData
-      })
+      .post(
+        `http://localhost:8080/find_service`,
+        userServiceRequestData,
+        axiosConfig
+      )
       .then(res => {
         console.log(res);
         console.log(res.data);
@@ -62,7 +70,7 @@ class userServiceRequest extends React.Component {
 
   yearChange = event => {
     this.setState({
-      year: event.target.value
+      yr: event.target.value
     });
   };
 
@@ -78,15 +86,15 @@ class userServiceRequest extends React.Component {
     });
   };
 
-  serviceTimeFromChange = event => {
+  serviceFromChange = event => {
     this.setState({
-      serviceTimeFrom: event.target.value
+      serviceFrom: event.target.value
     });
   };
 
-  serviceTimeToChange = event => {
+  serviceToChange = event => {
     this.setState({
-      serviceTimeTo: event.target.value
+      serviceTo: event.target.value
     });
   };
 
@@ -209,7 +217,7 @@ class userServiceRequest extends React.Component {
           <div className="form-group row">
             <label
               className="col-sm-2 col-form-label"
-              htmlFor="inputServiceTimeFrom"
+              htmlFor="inputServiceFrom"
             >
               Service Time
             </label>
@@ -219,16 +227,16 @@ class userServiceRequest extends React.Component {
                 className="form-control"
                 id="inputServiceTimeFrom"
                 placeholder="From"
-                onChange={this.serviceTimeFromChange}
+                onChange={this.serviceFromChange}
               />
             </div>
             <div className="col-sm-2">
               <input
                 type="text"
                 className="form-control"
-                id="inputServiceTimeTo"
+                id="inputserviceTo"
                 placeholder="To"
-                onChange={this.serviceTimeToChange}
+                onChange={this.serviceToChange}
               />
             </div>
           </div>
