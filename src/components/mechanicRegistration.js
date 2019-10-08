@@ -4,14 +4,14 @@ import { Link } from 'react-router-dom';
 
 class MechanicRegistration extends Component {
   state = {
-    companyName: '',
-    mechanicName: '',
-    licenceNumber: '',
+    company: '',
+    mechName: '',
+    licence: '',
     address: '',
-    phoneNumber: '',
-    serviceDay: '',
-    serviceTimeTo: '',
-    serviceTimeFrom: '',
+    phoneNum: '',
+    availableDays: '',
+    wkHrStart: '',
+    wkHrEnd: '',
     email: ''
   };
 
@@ -19,21 +19,30 @@ class MechanicRegistration extends Component {
     event.preventDefault();
 
     const mechanicRegistrationData = {
-      companyName: this.state.companyName,
-      mechanicName: this.state.mechanicName,
-      licenceNumber: this.state.licenceNumber,
+      company: this.state.company,
+      mechName: this.state.mechName,
+      licence: this.state.licence,
       address: this.state.address,
-      phoneNumber: this.state.phoneNumber,
-      serviceDay: this.state.serviceDay,
-      serviceTimeTo: this.state.serviceTimeTo,
-      serviceTimeFrom: this.state.serviceTimeFrom,
+      phoneNum: this.state.phoneNum,
+      availableDays: this.state.availableDays,
+      wkHrStart: this.state.wkHrStart,
+      wkHrEnd: this.state.wkHrEnd,
       email: this.state.email
     };
 
+    let axiosConfig = {
+      headers: {
+        'Access-Control-Allow-Origin': '*'
+      }
+    };
+
     axios
-      .post(`https://jsonplaceholder.typicode.com/posts`, {
-        mechanicRegistrationData
-      })
+      .post(
+        'https://infs3208-30.appspot.com/mecCreate',
+
+        mechanicRegistrationData,
+        axiosConfig
+      )
       .then(res => {
         console.log(res);
         console.log(res.data);
@@ -43,19 +52,19 @@ class MechanicRegistration extends Component {
 
   companyChange = event => {
     this.setState({
-      companyName: event.target.value
+      company: event.target.value
     });
   };
 
   mechanicChange = event => {
     this.setState({
-      mechanicName: event.target.value
+      mechName: event.target.value
     });
   };
 
   licenceChange = event => {
     this.setState({
-      licenceNumber: event.target.value
+      licence: event.target.value
     });
   };
 
@@ -67,25 +76,25 @@ class MechanicRegistration extends Component {
 
   phoneChange = event => {
     this.setState({
-      phoneNumber: event.target.value
+      phoneNum: event.target.value
     });
   };
 
   serviceDayChange = event => {
     this.setState({
-      serviceDay: event.target.value
+      availableDays: event.target.value
     });
   };
 
   serviceTimeFromChange = event => {
     this.setState({
-      serviceTimeFrom: event.target.value
+      wkHrStart: event.target.value
     });
   };
 
   serviceTimeToChange = event => {
     this.setState({
-      serviceTimeTo: event.target.value
+      wkHrEnd: event.target.value
     });
   };
 
@@ -121,7 +130,7 @@ class MechanicRegistration extends Component {
             <div className="col-sm-4">
               <input
                 type="text"
-                className="form-control" 
+                className="form-control"
                 id="inputMechanic"
                 placeholder="e.g. John Doe"
                 onChange={this.mechanicChange}
