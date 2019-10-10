@@ -6,7 +6,7 @@
   height: 40vmin;
 }
 
-Header {
+header {
   font-size: 20px;
   font-style: normal;
 }
@@ -38,7 +38,25 @@ p {
 }
 
 .center-container {
-
   margin: 100px;
+}
 
+h5 {
+  margin-top: 0px !important;
+}
+
+.list-title {
+  font-size: 2em;
+}
+.list-font {
+  font-size: 1.5em;
+}
+
+.list-result-font {
+  font-size: 1.3em;
+  margin-left: 2em;
+}
+
+.row {
+  margin-bottom: 1.2em;
 }

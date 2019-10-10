@@ -39,15 +39,20 @@ class userServiceRequest extends React.Component {
     axios
       .post(
         'https://infs3208-30.appspot.com/find_service',
+        // 'http://localhost:8080/find_service',
         userServiceRequestData,
         axiosConfig
       )
       .then(res => {
         console.log(res);
         console.log(res.data);
+        this.props.history.push({
+          pathname: '/matching',
+          state: {
+            matchedData: res.data
+          }
+        });
       });
-
-    this.props.history.push('/matching');
   };
 
   addressChange = event => {
@@ -200,12 +205,6 @@ class userServiceRequest extends React.Component {
               style={{ marginLeft: '1em' }}
             >
               <option value="0">Choose...</option>
-              <option value="Monday">Monday</option>
-              <option value="Tuesday">Tuesday</option>
-              <option value="Wednesday">Wednesday</option>
-              <option value="Friday">Friday</option>
-              <option value="Saturday">Saturday</option>
-              <option value="Sunday">Sunday</option>
               <option value="Weekdays">Weekdays</option>
               <option value="Weekends">Weekends</option>
               <option value="Mon-Thurs">Mon-Thurs</option>

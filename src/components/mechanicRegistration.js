@@ -39,6 +39,7 @@ class MechanicRegistration extends Component {
     axios
       .post(
         'https://infs3208-30.appspot.com/mecCreate',
+        // 'http://localhost:8080/mecCreate',
 
         mechanicRegistrationData,
         axiosConfig

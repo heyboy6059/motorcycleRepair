@@ -1,62 +1,95 @@
 import React, { Component } from 'react';
 import * as mechanics from '../data/storeData';
 import MechInfoList from './mechInfoList';
-
+import axios from 'axios';
 
 class Matching extends Component {
-  id = 3
   state = {
-    information: [
-      {
-        id: 0,
-        mechName: 'Gerrad',
-        company: 'Suzuki',
-        phoneNum: '0329-392-192',
-        email: 'fdlkk112@hotmail.com',
-        availableDays: 'Mon,Tues,Wed',
-        wkHrStart: '07:00',
-        wkHrEnd: '17:00',
-        rating: '60',
-        dist: '5'
-      },
-      {
-        id: 1,
-        mechName: 'Lampard',
-        company: 'Holden',
-        phoneNum: '0321-323-454',
-        email: 'jf109322@gmail.com',
-        availableDays: 'Weekdays',
-        wkHrStart: '10:00',
-        wkHrEnd: '16:00',
-        rating: '80',
-        dist: '1'
-      },
-      {
-        id: 2,
-        mechName: 'Scholes',
-        company: 'BMW',
-        phoneNum: '0221-323-454',
-        email: '39999dllsl@gmail.com',
-        availableDays: 'Weekend',
-        wkHrStart: '09:00',
-        wkHrEnd: '20:00',
-        rating: '20',
-        dist: '10'
-      }
-    ]
-  }
-  handleCreate = (data) => {
-    const { information} = this.state;
-    this.setState({
-      information: information.concat({ id: this.id++, ...data})
-    })
-  }
+    matchedMechanics: []
+  };
 
   render() {
     return (
-      <div className = "container">
+      <div className="container">
         <h2>Matchings Page</h2>
-        <MechInfoList data={this.state.information}/>
+        {this.props.location.state.matchedData.map(mechanic => (
+          <div class="card" style={{ marginBottom: '2em' }}>
+            <h5 class="card-header list-title" style={{ color: '#f64f59' }}>
+              <img
+                src={require('../img/fast-forward.png')}
+                style={{ width: '2%', marginRight: '0.5em' }}
+              />
+              {mechanic.company}
+            </h5>
+            <div class="card-body">
+              <h5 class="card-title list-title">{mechanic.mechName}</h5>
+              <p class="card-text">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-sm">
+                      <span className="list-font">Licence# </span>
+                      <span className="list-result-font">
+                        {mechanic.licence}
+                      </span>
+                    </div>
+                    <div class="col-sm">
+                      <span className="list-font">Phone </span>
+                      <span className="list-result-font">
+                        {mechanic.phoneNum}
+                      </span>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm">
+                      <span className="list-font">Email </span>
+                      <span className="list-result-font">{mechanic.email}</span>
+                    </div>
+                    <div class="col-sm">
+                      <span className="list-font">Available Days </span>
+                      <span className="list-result-font">
+                        {mechanic.availableDays}
+                      </span>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm">
+                      <span className="list-font">Trading Hours </span>
+                      <span className="list-result-font">
+                        From
+                        {mechanic.wkHrStart} to
+                        {mechanic.wkHrEnd}
+                      </span>
+                    </div>
+                    <div class="col-sm">
+                      <span className="list-font">Rating </span>
+                      <span className="badge badge-pill badge-warning list-result-font">
+                        {mechanic.rating}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </p>
+              <a
+                // href={'mailto:' + mechanic.email}
+                href={'tel:' + mechanic.phoneNum}
+                target="_top"
+                class="btn btn-lg btn-primary"
+              >
+                Book with phone
+              </a>
+              <a
+                style={{ marginLeft: '1.5em' }}
+                href={'mailto:' + mechanic.email}
+                target="_top"
+                class="btn btn-lg btn-primary"
+              >
+                Book with email
+              </a>
+            </div>
+          </div>
+        ))}
+
+        {/* <MechInfoList data={this.state.information} /> */}
       </div>
     );
   }
