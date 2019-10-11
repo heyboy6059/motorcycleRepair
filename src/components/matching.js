@@ -10,88 +10,66 @@ class Matching extends Component {
 
   render() {
     return (
-      <div className="container">
-        <h2>Matchings Page</h2>
-        {this.props.location.state.matchedData.map(mechanic => (
-          <div class="card" style={{ marginBottom: '2em' }}>
-            <h5 class="card-header list-title" style={{ color: '#f64f59' }}>
-              <img
-                src={require('../img/fast-forward.png')}
-                style={{
-                  width: '2%',
-                  marginRight: '0.5em'
-                }}
-              />
-              {mechanic.company}
-            </h5>
-            <div class="card-body">
-              <h5 class="card-title list-title" style={{ marginBottom: '1em' }}>
-                {mechanic.mechName}
+      <div className="center-container">
+        <div className="container">
+          <h2>Matching Page</h2>
+          {this.props.location.state.matchedData.map(mechanic => (
+            <div class="card" style={{ marginBottom: '2em' }}>
+              <h5 class="card-header list-title" style={{ color: '#f64f59' }}>
+                <img
+                  src={require('../img/fast-forward.png')}
+                  style={{ width: '2%', marginRight: '0.5em' }}
+                />
+                {mechanic.company}
               </h5>
-              <p class="card-text">
-                <div class="container">
-                  <div class="row">
-                    <div class="col-sm">
-                      <span className="list-font badge badge-info">
-                        Licence#
-                      </span>
-                      <span className="list-result-font">
-                        {mechanic.licence}
-                      </span>
+              <div class="card-body">
+                <h5 class="card-title list-title">{mechanic.mechName}</h5>
+                <p class="card-text">
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-sm">
+                        <span className="list-font">Licence# </span>
+                        <span className="list-result-font">
+                          {mechanic.licence}
+                        </span>
+                      </div>
+                      <div class="col-sm">
+                        <span className="list-font">Phone </span>
+                        <span className="list-result-font">
+                          {mechanic.phoneNum}
+                        </span>
+                      </div>
                     </div>
-                    <div class="col-sm">
-                      <span className="list-font badge badge-info">Phone </span>
-                      <span className="list-result-font">
-                        {mechanic.phoneNum}
-                      </span>
+                    <div class="row">
+                      <div class="col-sm">
+                        <span className="list-font">Email </span>
+                        <span className="list-result-font">{mechanic.email}</span>
+                      </div>
+                      <div class="col-sm">
+                        <span className="list-font">Available Days </span>
+                        <span className="list-result-font">
+                          {mechanic.availableDays}
+                        </span>
+                      </div>
                     </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-sm">
-                      <span className="list-font badge badge-info">Email </span>
-                      <span className="list-result-font">{mechanic.email}</span>
-                    </div>
-                    <div class="col-sm">
-                      <span className="list-font badge badge-info">
-                        Available Days{' '}
-                      </span>
-                      <span className="list-result-font">
-                        {mechanic.availableDays}
-                      </span>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-sm">
-                      <span className="list-font badge badge-info">
-                        Trading Hours{' '}
-                      </span>
-                      <span className="list-result-font">
-                        From <b>{mechanic.wkHrStart.slice(0, 5)}</b> to{' '}
-                        <b>{mechanic.wkHrEnd.slice(0, 5)}</b>
-                      </span>
-                    </div>
-                    <div class="col-sm">
-                      <span className="list-font badge badge-info">
-                        Rating{' '}
-                      </span>
-                      <span className="badge badge-pill badge-warning list-result-font">
-                        {mechanic.rating}
-                      </span>
+                    <div class="row">
+                      <div class="col-sm">
+                        <span className="list-font">Trading Hours </span>
+                        <span className="list-result-font">
+                          From
+                          {mechanic.wkHrStart} to
+                          {mechanic.wkHrEnd}
+                        </span>
+                      </div>
+                      <div class="col-sm">
+                        <span className="list-font">Rating </span>
+                        <span className="badge badge-pill badge-warning list-result-font">
+                          {mechanic.rating}
+                        </span>
+                      </div>
                     </div>
                   </div>
-                  <div class="row">
-                    <div class="col-sm">
-                      <span className="list-font badge badge-info">
-                        Distance from your address{' '}
-                      </span>
-                      <span className="list-result-font">
-                        <b>{parseInt(mechanic.Dist / 1000)}</b> km
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </p>
-              <div className="container" style={{ textAlign: 'right' }}>
+                </p>
                 <a
                   // href={'mailto:' + mechanic.email}
                   href={'tel:' + mechanic.phoneNum}
@@ -110,10 +88,10 @@ class Matching extends Component {
                 </a>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
 
-        {/* <MechInfoList data={this.state.information} /> */}
+          {/* <MechInfoList data={this.state.information} /> */}
+        </div>
       </div>
     );
   }

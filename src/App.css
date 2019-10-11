@@ -38,7 +38,24 @@ p {
 }
 
 .center-container {
+  background-color: #ffffff;
   margin: 100px;
+  text-align: center;
+  justify-content: center;
+  width:70%;
+  color: grey;
+  border: 2px solid black;
+  margin-bottom : 20px;
+  opacity: 0.95;
+}
+
+.form-container {
+  background-color: #1432ff;
+  color : #f23498;
+  text-align: center;
+  justify-content: center;
+  height :500px;
+  display:flex;
 }
 
 h5 {
