@@ -10,9 +10,11 @@ class Matching extends Component {
 
   render() {
     return (
-      <div className="center-container">
+
         <div className="container">
+          <div className="center-container">
           <h2>Matching Page</h2>
+          </div>
           {this.props.location.state.matchedData.map(mechanic => (
             <div class="card" style={{ marginBottom: '2em' }}>
               <h5 class="card-header list-title" style={{ color: '#f64f59' }}>
@@ -92,7 +94,7 @@ class Matching extends Component {
 
           {/* <MechInfoList data={this.state.information} /> */}
         </div>
-      </div>
+
     );
   }
 }
