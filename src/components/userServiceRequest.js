@@ -38,8 +38,8 @@ class userServiceRequest extends React.Component {
 
     axios
       .post(
-        'https://infs3208-30.appspot.com/find_service',
-        // 'http://localhost:8080/find_service',
+        // 'https://infs3208-30.appspot.com/find_service',
+        'http://localhost:8080/find_service',
         userServiceRequestData,
         axiosConfig
       )
